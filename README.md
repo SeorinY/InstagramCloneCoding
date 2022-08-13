@@ -4,8 +4,9 @@ Instagram clone coding
 - 주제 : 인스타그램 어플 클론 코딩 영상 따라해보기
 - 참고한 링크 : https://www.youtube.com/watch?v=Yv62q3c3UxI&list=PL5PR3UyfTWvfhKNQkT3Wgq6QIIWRJyxM3
 
-Build with : 
+Build with : Cancel changes
   <img src="https://img.shields.io/badge/Swift-F05138?style=for-the-badge&logo=Swift&logoColor=white"> 
+
 Tool : 
 <img src="https://img.shields.io/badge/Xcode-147EFB?style=for-the-badge&logo=Xcode&logoColor=white"> 
 
