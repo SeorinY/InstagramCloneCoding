@@ -11,7 +11,8 @@ protocol UserFollowTableViewCellDelegate: AnyObject {
     func didTapFollowUnfollowButton(model: UserRelationship)
 }
 enum FollowState{
-    case following, not_following
+    case following // indicates the current user is following the other user
+    case not_following // indicates the current user is not following the other user
 }
 
 struct UserRelationship{
@@ -62,6 +63,7 @@ class UserFollowTableViewCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(usernameLabel)
         contentView.addSubview(followButton)
+        selectionStyle = .none
         followButton.addTarget(self, action: #selector(didTapFollowButton), for: .touchUpInside)
     }
     
