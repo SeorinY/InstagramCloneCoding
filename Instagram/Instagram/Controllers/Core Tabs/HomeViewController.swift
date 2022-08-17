@@ -7,11 +7,21 @@
 
 import FirebaseAuth
 import UIKit
-
+struct HomeFeedRenderViewModel{
+    let header : PostRenderViewModel
+    let post : PostRenderViewModel
+    let actions : PostRenderViewModel
+    let comments : PostRenderViewModel
+}
 class HomeViewController: UIViewController {
+    private var feedRenderModels = [HomeFeedRenderViewModel]()
     private let tableView : UITableView = {
         let tableView = UITableView()
+        //Register cells
         tableView.register(IGFeedPostTableViewCell.self, forCellReuseIdentifier: IGFeedPostTableViewCell.identifier)
+        tableView.register(IGFeedPostGeneralTableViewCell.self, forCellReuseIdentifier: IGFeedPostGeneralTableViewCell.identifier)
+        tableView.register(IGFeedPostHeaderTableViewCell.self, forCellReuseIdentifier: IGFeedPostHeaderTableViewCell.identifier)
+        tableView.register(IGFeedPostActionTableViewCell.self, forCellReuseIdentifier: IGFeedPostActionTableViewCell.identifier)
         return tableView
     }()
     
@@ -56,6 +66,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
         return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell =  tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
         return cell
     }
