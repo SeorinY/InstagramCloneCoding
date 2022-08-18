@@ -82,8 +82,8 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 //        let model = userPosts[indexPath.row]
-//        cell.configure(with : model)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+//        cell.configure(with : model)
         cell.configure(debug: "test")
         return cell
     }
@@ -94,9 +94,23 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         
         //get the model and open post controller
 //        let model = userPosts[indexPath.row]
-        
-        let vc = PostViewController(model: nil)
-        vc.title = "Post"
+        let user = User(username: "@seorin", bio: "", name:("" , ""),
+                        profilePhoto: URL(string: "https://www.google.com")!,
+                        birthDate: Date(), gender: .male,
+                        counts: UserCount(followers: 1, following: 1, posts: 1),
+                        joinDate: Date())
+        let post = UserPost(identifier: "",
+                            postType: .photo,
+                            thumbnailImage: URL(string: "https://www.google.com")!,
+                            postURL: URL(string: "https://www.google.com")!,
+                            caption: nil,
+                            likeCount: [],
+                            comments: [],
+                            createDate: Date(),
+                            taggedUsers: [],
+                            owner : user)
+        let vc = PostViewController(model: post)
+        vc.title = post.postType.rawValue
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
         
