@@ -24,6 +24,7 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
     
     private let gridButton : UIButton = {
         let button = UIButton()
+//        button.backgroundColor = .red
         button.clipsToBounds = true
         button.tintColor = .systemBlue
         button.setBackgroundImage(UIImage(systemName: "square.grid.2x2"), for: .normal)
@@ -74,6 +75,9 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
         let gridButtonX = ((width/2) - size) / 2
         gridButton.frame = CGRect(x: gridButtonX, y: Constants.padding, width: size, height: size)
         taggedButton.frame = CGRect(x: gridButtonX + (width / 2), y: Constants.padding, width: size, height: size)
+        
+//        gridButton.frame = CGRect(x: gridButtonX, y: Constants.padding, width: 500, height: 500)
+//        taggedButton.frame = CGRect(x: gridButtonX + (width / 2), y: Constants.padding, width: size, height: size)
         
     }
 }

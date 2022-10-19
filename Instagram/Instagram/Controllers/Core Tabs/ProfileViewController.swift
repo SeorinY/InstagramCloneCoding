@@ -1,12 +1,7 @@
-//
-//  ProfileViewController.swift
-//  Instagram
-//
-//  Created by Mac Book Pro on 2022/07/28.
-//
-
 import UIKit
-import CryptoKit
+//import CryptoKit
+
+
 /// Profile view controller
 final class ProfileViewController: UIViewController {
     private var collectionView : UICollectionView?
@@ -27,7 +22,7 @@ final class ProfileViewController: UIViewController {
         layout.itemSize = CGSize(width: size, height: size)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
-        
+        collectionView?.backgroundColor = .red
         //Cell
         collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
         //Header
@@ -116,6 +111,8 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         
     }
 
+    
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard kind == UICollectionView.elementKindSectionHeader else{
             //footer
@@ -145,6 +142,9 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         //Size of section tabs
         return CGSize(width: collectionView.width, height: 50)
     }
+    
+    
+    
 }
 extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate{
     func profileHeaderDidTapPostButton(_ header: ProfileInfoHeaderCollectionReusableView) {
@@ -177,7 +177,7 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     
     func profileHeaderDidTapEditProfileButton(_ header: ProfileInfoHeaderCollectionReusableView) {
         let vc = EditProfileViewController()
-        vc.title = "Edit PRofile"
+        vc.title = "Edit Profile"
         present(UINavigationController(rootViewController: vc), animated: true)
     }
     

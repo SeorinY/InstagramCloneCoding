@@ -51,7 +51,7 @@ final class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
 
     private let editProfileButton : UIButton = {
         let button = UIButton()
-        button.setTitle("Edit Yout Profile", for: .normal)
+        button.setTitle("Edit Your Profile", for: .normal)
         button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .secondarySystemBackground
         return button
@@ -123,7 +123,6 @@ final class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
         let bioLabelSize = bioLabel.sizeThatFits(frame.size)
         bioLabel.frame = CGRect(x: 5, y: 5+nameLabel.bottom, width: width - 10, height: bioLabelSize.height).integral
     }
-    
     
     //MARK: -Actions
     @objc private func didTapPostsButton(){

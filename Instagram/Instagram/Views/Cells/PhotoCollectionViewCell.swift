@@ -18,11 +18,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        photoImageView.frame = contentView.bounds
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         photoImageView.image = nil
@@ -54,4 +49,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         photoImageView.image = UIImage(named: imageName)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        photoImageView.frame = contentView.bounds
+    }
 }

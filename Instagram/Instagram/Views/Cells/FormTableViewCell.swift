@@ -10,8 +10,9 @@ import UIKit
 protocol FormTableViewCellDelegate : AnyObject{
     func formTableViewCell(_ cell : FormTableViewCell, didUpdateField updatedModel : EditProfileFormModel)
 }
-//Cell 어떻게 생겼는지 정의해주고, Model을 받아서 설정해줌
 
+
+//Cell 어떻게 생겼는지 정의해주고, Model을 받아서 설정해줌
 class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     static let identifier = "FormTableViewCell"
